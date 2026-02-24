@@ -10,7 +10,7 @@ function Login() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://skill-test-for-fullstack-developer.onrender.com/api/auth/login', {
+      const response = await axios.post('https://skill-test-for-fullstack-developer.onrender.com/auth/login', {
         username,
         password,
       });
