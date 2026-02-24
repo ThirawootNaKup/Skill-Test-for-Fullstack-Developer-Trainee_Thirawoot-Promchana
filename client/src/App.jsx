@@ -44,7 +44,7 @@ function App() {
       if (filters.status) params.status = filters.status;
       if (filters.category) params.category = filters.category;
 
-      const response = await axios.get('/api/todos', {
+      const response = await axios.get('https://skill-test-for-fullstack-developer.onrender.com/todos', {
         headers: { Authorization: `Bearer ${token}` },
         params: params 
       });
@@ -62,7 +62,7 @@ function App() {
     e.preventDefault();
     try {
       const assigneeArray = newTodo.assignees.split(',').map(name => name.trim()).filter(n => n);
-      await axios.post('/api/todos', 
+      await axios.post('https://skill-test-for-fullstack-developer.onrender.com/todos', 
         { ...newTodo, assignees: assigneeArray }, 
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -75,7 +75,8 @@ function App() {
 
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.patch(`/api/todos/${id}`, 
+      // แก้จาก /todos/${id}/status เป็น /todos/${id} เฉยๆ ครับ
+      await axios.patch(`https://skill-test-for-fullstack-developer.onrender.com/todos/${id}`, 
         { status: newStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -88,7 +89,7 @@ function App() {
   const handleDelete = async (id) => {
     if(!confirm("ยืนยันการลบ?")) return;
     try {
-      await axios.delete(`/api/todos/${id}`, {
+      await axios.delete(`https://skill-test-for-fullstack-developer.onrender.com/todos/${id}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       fetchTodos();
