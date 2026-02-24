@@ -1,12 +1,13 @@
-import { NestFactory } from '@nestjs/core'; // 👈 บรรทัดที่ขาดไป
-import { AppModule } from './app.module';   // 👈 บรรทัดที่ขาดไป
+// server/src/main.ts
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   
   app.enableCors({
-    // ใส่ URL ของ Frontend (Vercel) ที่คุณได้มา
-    origin: 'https://skill-test-for-fullstack-developer-five.vercel.app', 
+    origin: '*', // 👈 เปลี่ยนเป็น '*' ตัวเดียวเลยครับ (อนุญาตทุกเว็บ)
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
 
