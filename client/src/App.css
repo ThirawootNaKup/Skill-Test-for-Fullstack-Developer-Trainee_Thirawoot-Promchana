@@ -1,0 +1,83 @@
+/* Dashboard layout styles */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffffcc;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px 0 rgba(56, 189, 248, 0.12);
+  text-align: left;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* Card style for dashboard widgets */
+.card {
+  padding: 2em;
+  background: #e3f6ff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px 0 rgba(56, 189, 248, 0.08);
+  margin-bottom: 1.5em;
+}
+
+/* Utility text */
+.read-the-docs {
+  color: #38bdf8;
+}
+
+/* Dashboard header */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5em;
+  border-bottom: 2px solid #e3f6ff;
+}
+
+/* Sidebar (optional) */
+.dashboard-sidebar {
+  width: 220px;
+  background: #b3eaff;
+  border-radius: 16px;
+  padding: 1.5em 1em;
+  min-height: 400px;
+  box-shadow: 0 2px 8px 0 rgba(56, 189, 248, 0.08);
+  margin-right: 2em;
+}
+
+/* Main content */
+.dashboard-content {
+  flex: 1;
+}
+
+/* Layout wrapper */
+.dashboard-layout {
+  display: flex;
+  gap: 2em;
+}
