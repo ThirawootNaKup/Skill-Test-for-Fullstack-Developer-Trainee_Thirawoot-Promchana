@@ -10,7 +10,7 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/auth/signup', { username, password });
+      await axios.post('https://skill-test-for-fullstack-developer.onrender.com/api/auth/signup', { username, password });
       alert('สมัครสมาชิกสำเร็จ! กรุณา Login');
       navigate('/'); // กลับไปหน้า Login
     } catch (error) {
